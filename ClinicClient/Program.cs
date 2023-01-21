@@ -12,14 +12,14 @@ namespace ClinicClient
                 "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
             using var channel = GrpcChannel.ForAddress("http://localhost:5001");
-            ClinicServiceClient clinicServiceClient = new ClinicServiceClient(channel);
+            ClinicServiceClient clinicServiceClient = new(channel);
 
             var createClientResponse = clinicServiceClient.CreateClient(new CreateClientRequest
             {
-                Document = "Doc 111",
-                FirstName = "Test",
-                Patronymic = "Patro",
-                Surname = "Sur"
+                Document = "Doc",
+                FirstName = "FirstName",
+                Patronymic = "Patronymic",
+                Surname = "Surname"
             });
 
             if (createClientResponse.ErrCode == 0)

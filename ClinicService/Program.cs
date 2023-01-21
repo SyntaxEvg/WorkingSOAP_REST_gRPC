@@ -10,9 +10,6 @@ namespace ClinicService
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
             builder.WebHost.ConfigureKestrel(options =>
             {
                 options.Listen(IPAddress.Any, 5001, listenOptions =>
@@ -54,7 +51,7 @@ namespace ClinicService
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<ClinicService.Services.Impl.ClinicService>();
+                endpoints.MapGrpcService<Services.Impl.ClinicService>();
             });
 
             app.Run();
