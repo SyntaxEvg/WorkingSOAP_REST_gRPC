@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicService", "ClinicServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicService.Data", "ClinicService.Data\ClinicService.Data.csproj", "{19ECCF34-0FE6-480E-A25C-C7BC6A59E0D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicServiceV2", "ClinicServiceV2\ClinicServiceV2.csproj", "{3A7A1556-D748-41A5-ABDB-50EBD2748E92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{19ECCF34-0FE6-480E-A25C-C7BC6A59E0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19ECCF34-0FE6-480E-A25C-C7BC6A59E0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19ECCF34-0FE6-480E-A25C-C7BC6A59E0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A7A1556-D748-41A5-ABDB-50EBD2748E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A7A1556-D748-41A5-ABDB-50EBD2748E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A7A1556-D748-41A5-ABDB-50EBD2748E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A7A1556-D748-41A5-ABDB-50EBD2748E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{45283EBD-5FC2-4913-8E64-72556AA7F49B} = {2292C7E8-C77F-43F1-A2C3-92739E04CDF7}
 		{42B9C144-D2B2-4D43-80EF-6CA0E8E4BD3C} = {2292C7E8-C77F-43F1-A2C3-92739E04CDF7}
 		{19ECCF34-0FE6-480E-A25C-C7BC6A59E0D4} = {2292C7E8-C77F-43F1-A2C3-92739E04CDF7}
+		{3A7A1556-D748-41A5-ABDB-50EBD2748E92} = {2292C7E8-C77F-43F1-A2C3-92739E04CDF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA1A7146-0C5E-4443-8CD3-F63EE91DED27}

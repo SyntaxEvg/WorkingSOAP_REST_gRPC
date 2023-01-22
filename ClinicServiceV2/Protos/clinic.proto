@@ -1,19 +1,39 @@
 ﻿syntax = "proto3";
 option csharp_namespace = "ClinicServiceNamespace";
-import "google/protobuf/wrappers.proto";
-
+import "Protos/google/protobuf/wrappers.proto";
+import "Protos/google/api/annotations.proto";
+package proto;
+//Клиент
 service ClinicService{
+	//добавить
 	rpc CreateClient (CreateClientRequest) returns (CreateClientResponse);
+	//обновить
 	rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse);
+	//удалить
 	rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse);
-	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse);
-	rpc GetClients (GetClientsRequest) returns (GetClientsResponse);
+	//получить по id
+	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse){
+		//option (google.api.http) = {
+		//	post:"/api/clientbyid",
+		//	body: "*", 
+		//	responce_body:"client"
+		//};
+	};
+	//получить всех клиентов
+	rpc GetClients (GetClientsRequest) returns (GetClientsResponse){
+		option (google.api.http) = {
+		get:"/api/clients"
+		};
+	}
 }
-
 message CreateClientRequest {
+	//документ
 	string document = 1;
+	//фамилия
 	string surname = 2;
+	//имя
 	string firstName = 3;
+	//отчество
 	string patronymic = 4;
 }
 
