@@ -6,22 +6,23 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\auth.proto" />
+    <None Remove="Protos\clinic.proto" />
+  </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.21.11" />
+		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
 		<PackageReference Include="Grpc.Net.Client" Version="2.50.0" />
 		<PackageReference Include="Grpc.Tools" Version="2.51.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-
 	<ItemGroup>
-		<Folder Include="Proto\" />
+	  <Protobuf Include="Protos\auth.proto" GrpcServices="Client" />
+	  <Protobuf Include="Protos\clinic.proto" GrpcServices="Client" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Protobuf Include="..\ClinicService\Protos\clinic.proto" GrpcServices="Client">
-	    <Link>Proto\clinic.proto</Link>
-	  </Protobuf>
-	</ItemGroup>
+	
 </Project>

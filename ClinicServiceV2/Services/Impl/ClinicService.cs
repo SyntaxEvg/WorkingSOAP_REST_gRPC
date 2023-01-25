@@ -9,11 +9,7 @@ namespace ClinicService.Services.Impl
     public class ClinicService : ClinicServiceBase
     {
         private readonly ClinicServiceDbContext _dbContext;
-        public ClinicService(ClinicServiceDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
+        public ClinicService(ClinicServiceDbContext dbContext) => _dbContext = dbContext;
 
         public override Task<CreateClientResponse> CreateClient(CreateClientRequest request, ServerCallContext context)
         {
