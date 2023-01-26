@@ -1,10 +1,7 @@
 ﻿using ClinicService.Data;
 using ClinicService.Models;
 using ClinicService.Models.Requests;
-using ClinicService.Services.Interfaces;
 using ClinicService.Utils;
-using Grpc.Core;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -118,9 +115,9 @@ namespace ClinicService.Services.Impl
         }
 
 
-        private Proto.SessionContext GetSessionContext(Account account, AccountSession accountSession)
+        private SessionContext GetSessionContext(Account account, AccountSession accountSession)
         {
-            return new Proto.SessionContext
+            return new SessionContext
             {
                 SessionId = accountSession.SessionId,
                 SessionToken = accountSession.SessionToken,
@@ -162,6 +159,5 @@ namespace ClinicService.Services.Impl
                 .FirstOrDefault(account => account.EMail == login);
         }
 
-      
     }
 }

@@ -7,6 +7,6 @@ namespace ClinicService.Services.Interfaces
     {
         ClinicService.Models.Requests.AuthenticationResponse Login(ClinicService.Models.Requests.AuthenticationRequest authenticationRequest);
 
-        public SessionContext GetSessionInfo(string sessionToken);
+        public Proto.SessionContext GetSessionInfo(string sessionToken);
     }
 }

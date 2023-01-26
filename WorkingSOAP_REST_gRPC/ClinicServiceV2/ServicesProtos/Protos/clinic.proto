@@ -1,19 +1,56 @@
-syntax = "proto3";
-
-option csharp_namespace = "ClinicServiceNamespace";
+﻿syntax = "proto3";
+option csharp_namespace = "ClinicServiceV2"; //ClinicServiceNamespace
 import "google/protobuf/wrappers.proto";
+import "Protos/google/api/annotations.proto";
+package proto;
 
 service ClinicService{
+    //Create client
+	rpc CreateClinet (CreateClientRequestGrpc) returns (CreateClientResponse)
+    {
+        option (google.api.http) = {
+        post: "/api/CreateClinet"
+        body: "*"
+        };
+    }
+    //Update client
+	rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse){
+        option (google.api.http) = {
+        patch: "/api/UpdateClient"
+        body: "*"
+        };
+    }
 
-	rpc CreateClinet (CreateClientRequest) returns (CreateClientResponse);
-	rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse);
-	rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse);
-	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse);
-	rpc GetClients (GetClientsRequest) returns (GetClientsResponse);
+    //Delete client
+	rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse)
+     {
+        option (google.api.http) = {
+        delete: "/api/DeleteClient"
+        body: "*"
+        };
+    }
+
+
+    //Get client by Id
+	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse)
+     {
+        option (google.api.http) =  {
+            get: "/api/GetClientById"
+        };
+    }
+
+    //Get all clients
+	rpc GetClients (GetClientsRequest) returns (GetClientsResponse)
+   {
+        option (google.api.http) =  {
+            get: "/api/clients"
+            body:"*"
+        };
+    }
 }
 
-
-message CreateClientRequest {
+//Request create clien
+message CreateClientRequestGrpc {
         string document = 1;
         string surname = 2;
         string firstName = 3;
@@ -75,3 +112,4 @@ message GetClientsResponse{
     int32 errCode = 2;
     string errMessage =3;
 }
+

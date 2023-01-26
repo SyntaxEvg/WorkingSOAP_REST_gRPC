@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicServiceV2.Models\ClinicServiceV2.Models.csproj" />
+    <ProjectReference Include="..\DAL.ClinicServiceV2\DAL.ClinicServiceV2.csproj" />
+  </ItemGroup>
+
+</Project>

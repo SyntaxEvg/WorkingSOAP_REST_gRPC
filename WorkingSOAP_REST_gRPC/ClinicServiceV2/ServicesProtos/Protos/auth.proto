@@ -1,0 +1,41 @@
+﻿syntax = "proto3";
+option csharp_namespace = "ClinicService.ProtoV2";
+package ClinicServiceProtos;
+
+service AuthenticateService {
+    rpc Login (AuthenticationRequestGrpc) returns (AuthenticationResponseGrpc);
+    rpc GetSession (GetSessionRequest) returns (GetSessionResponse);
+}
+
+message GetSessionRequest {
+}
+
+message GetSessionResponse {
+    SessionContextGrpc sessionContext = 1;
+}
+
+message AuthenticationRequestGrpc {
+        string userName = 1;
+        string password = 2;
+}
+
+message AuthenticationResponseGrpc {
+    int32 status = 1;
+    SessionContextGrpc sessionContext = 2;
+}
+
+message SessionContextGrpc{
+    int32 sessionId = 1;
+    string sessionToken = 2;
+    AccountDtoGrpc account = 3;
+}
+
+message AccountDtoGrpc
+{
+    int32 accountId = 1;
+    string eMail = 2;
+    bool locked = 3;
+    string firstName = 4;
+    string lastName = 5;
+    string secondName = 6;
+}
