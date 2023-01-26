@@ -44,7 +44,7 @@ Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v2", new OpenApiInfo
     {
-        Title = "Clinic servise",
+        Title = "Clinic servise Grpc",
         Version = "v2"
     });
     option.AddSecurityDefinition("Security",
@@ -103,7 +103,7 @@ Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
 app.MapGrpcService<ClinicServiceGrpc>();
-app.MapGrpcService<ClinicServiceGrpc>();
+app.MapGrpcService<AuthServiceGrpc>();
 app.MapGrpcReflectionService();
 app.UseSwagger();
 app.UseSwaggerUI(x =>
