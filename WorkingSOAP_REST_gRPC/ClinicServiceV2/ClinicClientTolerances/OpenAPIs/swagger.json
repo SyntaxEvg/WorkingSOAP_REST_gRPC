@@ -1,0 +1,387 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Clinic servise Grpc",
+    "version": "v2"
+  },
+  "paths": {
+    "/api/CreateClinet": {
+      "post": {
+        "tags": [
+          "ClinicService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClientRequestGrpc"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateClientResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/UpdateClient": {
+      "patch": {
+        "tags": [
+          "ClinicService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateClientRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateClientResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DeleteClient": {
+      "delete": {
+        "tags": [
+          "ClinicService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteClientRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteClientResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GetClientById": {
+      "get": {
+        "tags": [
+          "ClinicService"
+        ],
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clients": {
+      "get": {
+        "tags": [
+          "ClinicService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetClientsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetClientsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Any": {
+        "required": [
+          "@type"
+        ],
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ClientResponse": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "document": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "patronymic": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateClientRequestGrpc": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "patronymic": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateClientResponse": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errMessage": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteClientRequest": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteClientResponse": {
+        "type": "object",
+        "properties": {
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errMessage": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetClientsRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetClientsResponse": {
+        "type": "object",
+        "properties": {
+          "clients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientResponse"
+            }
+          },
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errMessage": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Any"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateClientRequest": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "document": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "patronymic": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateClientResponse": {
+        "type": "object",
+        "properties": {
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errMessage": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Security": {
+        "type": "apiKey",
+        "description": " Заголовок должен содержать Bearer XXXXXXX",
+        "name": "Авторизация",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

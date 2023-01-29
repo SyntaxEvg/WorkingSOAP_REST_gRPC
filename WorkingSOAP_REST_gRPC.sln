@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicServiceV2.Services", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicServiceV2.Models", "WorkingSOAP_REST_gRPC\ClinicServiceV2\ClinicServiceV2.Models\ClinicServiceV2.Models.csproj", "{CD4134B1-CE94-4E11-B3D7-E8F96A07F51D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicClientTolerances", "WorkingSOAP_REST_gRPC\ClinicServiceV2\ClinicClientTolerances\ClinicClientTolerances.csproj", "{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{CD4134B1-CE94-4E11-B3D7-E8F96A07F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD4134B1-CE94-4E11-B3D7-E8F96A07F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD4134B1-CE94-4E11-B3D7-E8F96A07F51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{D92C585F-4731-4016-9A2C-B344E11939AF} = {DD3843F9-E843-406C-85E1-8C731B0B0316}
 		{B2F66ED0-092A-47C7-A2C1-F14B8947C76B} = {DD3843F9-E843-406C-85E1-8C731B0B0316}
 		{CD4134B1-CE94-4E11-B3D7-E8F96A07F51D} = {DD3843F9-E843-406C-85E1-8C731B0B0316}
+		{B3CC5920-CC2A-48A4-AB60-4793B93B2C2B} = {DD3843F9-E843-406C-85E1-8C731B0B0316}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA1A7146-0C5E-4443-8CD3-F63EE91DED27}
